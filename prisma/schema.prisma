@@ -1,0 +1,25 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       String    @id @default(uuid()) @map("_id")
+  email    String    @unique
+  password String
+  expenses Expense[]  //no nood to get vlue for this
+}
+
+model Expense {
+  id        String   @id @default(uuid()) @map("_id")
+  title     String
+  amount    Float
+  date      DateTime
+  dateAdded DateTime @default(now())
+  User      User?    @relation(fields: [userId], references: [id]) //no nood to get vlue for this
+  userId    String?
+}
