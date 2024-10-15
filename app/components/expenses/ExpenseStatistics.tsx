@@ -46,5 +46,4 @@ const ExpenseStatistics: React.FC<ExpenseStatisticsProps> = ({ expenses }) => {
     </section>
   );
 }
-
 export default ExpenseStatistics;
