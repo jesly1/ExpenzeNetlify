@@ -3,7 +3,7 @@ import { Outlet } from "@remix-run/react";
 import React from "react";
 import MainHeader from "../components/navigation/MainHeader";
 import { getUserfromSession } from "../data/auth.server";
-import styles from "../styles/marketing.css";
+import styles from "../styles/marketing.css?url";
 const expensesLayout: React.FC = () => {
   return (
     <>

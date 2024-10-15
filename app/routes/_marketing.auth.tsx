@@ -3,7 +3,7 @@ import React from "react";
 import AuthForm from '../components/auth/AuthForm';
 import { login, signup } from "../data/auth.server";
 import { validateCredentials } from "../data/validation.server";
-import styles from '../styles/auth.css';
+import styles from '../styles/auth.css?url';
 import { useLoaderData } from "@remix-run/react";
 const Auth:React.FC=()=> {
 const user=useLoaderData()

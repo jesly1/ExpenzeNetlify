@@ -2,7 +2,7 @@ import { LinksFunction, LoaderFunction } from "@remix-run/node";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import React from "react";
 import ExpensesList from "../components/expenses/ExpensesList";
-import styles from "../styles/expenses.css";
+import styles from "../styles/expenses.css?url";
 import ExpensesHeader from "../components/navigation/ExpensesHeader";
 import { FaDownload, FaPlus } from "react-icons/fa";
 import { getExpenses } from "../data/expenses.server";
