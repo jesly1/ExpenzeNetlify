@@ -1,4 +1,4 @@
-import { LinksFunction, LoaderFunction } from "@remix-run/node";
+import { LinksFunction, LoaderFunction, redirect } from "@remix-run/node";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import React from "react";
 import ExpensesList from "../components/expenses/ExpensesList";
@@ -16,6 +16,8 @@ interface Expense {
 const ExpensesLayout: React.FC = () => {
   const expensesData = useLoaderData<Expense[]>();
   const hasExpenses = expensesData && expensesData.length > 0;
+
+  
   // console.log("any code here will run on frontend also as inside react component");
   return (
     <>
@@ -53,6 +55,7 @@ export const links: LinksFunction = () => [
 ];
 export const loader: LoaderFunction = async ({ request }) => {
   const userid = await requireUserSession(request);
+  if (!userid) return redirect("/auth");
   const expenses = await getExpenses(userid);
   return expenses;
 };
