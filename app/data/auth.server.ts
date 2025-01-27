@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import { createCookieSessionStorage } from '@remix-run/node';
 interface SignupInput {
   email: string;
-  password: string;
+  password: string;  
 }
 
 export async function signup({ email, password }: SignupInput): Promise<Response> {
